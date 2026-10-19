@@ -127,9 +127,6 @@ void Buffer::WriteTo(const std::filesystem::path& path) const {
     for(const std::string& line : lines_) {
         file << line << '\n';
     } 
-    if(!modified_ && lines_.size() == 1 && lines_.front().empty()) {
-        return ;
-    }
     file.close();
 }
 
